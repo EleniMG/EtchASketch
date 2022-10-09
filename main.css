@@ -1,0 +1,12 @@
+#grid {
+    height: 75vh;
+    width: 75vw;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    border: 1px solid black;
+}
+
+#grid > div {
+    border: 1px solid black;
+}
