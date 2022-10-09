@@ -17,8 +17,14 @@
     // Creating 16 divs within the container
         for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++){
             let cell = document.createElement("div")
+            cell.classList.add("box")
             container.appendChild(cell)
+                cell.addEventListener("mouseover", (event) => {
+                event.target.style.backgroundColor = "black";        
+            }, false);
         }
+
+               
 
     </script>
 </body>
