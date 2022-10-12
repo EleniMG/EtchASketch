@@ -9,17 +9,18 @@
     <link rel="stylesheet" type="text/css" href="./main.css" />
 </head>
 <body>
-    <div class="wrapper"><button type="button">How many squares?</button>
+    <div class="wrapper"><button onclick="newGridSize()" type="button">How many squares?</button>
     
 
     <div id="grid"></div> 
     </div>
     <script> 
+        
+        function setUpGrid(size) {
         let container = document.getElementById("grid");
-        const GRID_SIZE = 32
         
     // Creating 16 divs within the container and hover effect
-        for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++){
+        for (let i = 0; i < size * size; i++){
             let cell = document.createElement("div")
             cell.classList.add("box")
             container.appendChild(cell)
@@ -28,10 +29,24 @@
                 }, false);
         }
 
-        container.style.setProperty("grid-template-columns", `repeat(${GRID_SIZE}, 1fr)`);
-        container.style.setProperty("grid-template-rows", `repeat(${GRID_SIZE}, 1fr)`);
-               
+        container.style.setProperty("grid-template-columns", `repeat(${size}, 1fr)`);
+        container.style.setProperty("grid-template-rows", `repeat(${size}, 1fr)`);
+        }
 
+        function newGridSize() {
+            const gridSize = prompt("So, what's it gonna be?")
+            let botResponse = ""
+
+            if (gridSize == null || gridSize == "" || gridSize < 1 || gridSize > 100){
+                botResponse = "I need a number between 1 and 100!"
+                console.log(botResponse)
+            } else {
+
+            setUpGrid(gridSize)
+            }
+        }
+
+        setUpGrid(16)
     </script>
 </body>
 </html>
