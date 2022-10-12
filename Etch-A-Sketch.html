@@ -12,18 +12,20 @@
     <div id="grid"></div>
     <script> 
         let container = document.getElementById("grid");
-        const GRID_SIZE = 16
+        const GRID_SIZE = 32
         
-    // Creating 16 divs within the container
+    // Creating 16 divs within the container and hover effect
         for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++){
             let cell = document.createElement("div")
             cell.classList.add("box")
             container.appendChild(cell)
                 cell.addEventListener("mouseover", (event) => {
                 event.target.style.backgroundColor = "black";        
-            }, false);
+                }, false);
         }
 
+        container.style.setProperty("grid-template-columns", `repeat(${GRID_SIZE}, 1fr)`);
+        container.style.setProperty("grid-template-rows", `repeat(${GRID_SIZE}, 1fr)`);
                
 
     </script>
