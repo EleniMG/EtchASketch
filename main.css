@@ -10,3 +10,14 @@
 #grid > div {
     border: 1px solid black;
 }
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper > button {
+    margin-bottom: 20px;
+}
