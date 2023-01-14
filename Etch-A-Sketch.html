@@ -34,11 +34,11 @@
         }
 
         function newGridSize() {
-            const gridSize = prompt("Pick a number!")
+            const gridSize = prompt("Pick a number between 1 and 100!")
             let botResponse = ""
 
             if (gridSize == null || gridSize == "" || gridSize < 1 || gridSize > 100){
-                botResponse = "I need a number between 1 and 100!"
+                alert("I mean it! I need a number between 1 and 100.")
                 console.log(botResponse)
             } else {
             size = 0
